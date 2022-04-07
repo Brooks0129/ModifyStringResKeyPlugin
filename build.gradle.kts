@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.6.10"
     java
     `maven-publish`
+    id("com.vanniktech.maven.publish") version "0.19.0"
 }
 
 repositories {
@@ -9,14 +10,10 @@ repositories {
     google()
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.sander"
-            artifactId = "modify-string-res-key-plugin"
-            version = "31-SNAPSHOT"
-            from(components["java"])
-        }
+plugins.withId("com.vanniktech.maven.publish") {
+    mavenPublish {
+        sonatypeHost = com.vanniktech.maven.publish.SonatypeHost.S01
+
     }
 }
 
