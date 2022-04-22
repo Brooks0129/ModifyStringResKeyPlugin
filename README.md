@@ -26,11 +26,13 @@ Download
 
 ```groovy
 // In build.gradle of project
-repositories {
-    mavenCentral()
-}
-dependencies {
-    implementation 'io.github.brooks0129:modify-string-res-key-plugin:1.0.0'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'io.github.brooks0129:modify-string-res-key-plugin:1.0.0'
+    }
 }
 ```
 
